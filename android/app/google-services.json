@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "585384104987",
+    "project_id": "video-calling-govind",
+    "storage_bucket": "video-calling-govind.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:585384104987:android:ed34f824337bfffef894be",
+        "android_client_info": {
+          "package_name": "com.example.full_screen_notification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "585384104987-q5ja8sr072vk0v35hnl6ifkp9u2ad1jp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAV6T3x89fiDdWgKdbkkzPEjjjr8Amw7-I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "585384104987-q5ja8sr072vk0v35hnl6ifkp9u2ad1jp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
