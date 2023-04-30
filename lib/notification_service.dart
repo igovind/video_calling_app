@@ -3,10 +3,21 @@ import 'dart:developer';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:full_screen_notification/firebase_options.dart';
 
 class NotificationService {
+  static const platform = MethodChannel('samples.flutter.dev/calling');
+
+  static Future<void> _invokeIncomingCall() async {
+    try {
+      await platform.invokeMethod('showIncomingCallScreen');
+    } on PlatformException catch (e) {
+      print("Failed to get battery level: '${e.message}'.");
+    }
+  }
+
   static Future<void> _onBackgroundMessage(RemoteMessage message) async {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
@@ -61,7 +72,8 @@ class NotificationService {
 
   static onMessageReceived(RemoteMessage message) {
     if (message.notification != null) {
-      show(message.notification!.title!, message.notification!.body!);
+      // show(message.notification!.title!, message.notification!.body!);
+      _invokeIncomingCall();
     }
   }
 
