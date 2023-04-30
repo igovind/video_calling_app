@@ -4,11 +4,18 @@ import 'package:flutter/services.dart';
 import 'package:full_screen_notification/firebase_options.dart';
 import 'package:full_screen_notification/notification_service.dart';
 
+initFirebase() async {
+  await NotificationService().firebaseMessaging();
+}
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  // Isolate.run(initFirebase());
+  // Isolate.spawn(initFirebase(), null);
+
   runApp(const MyApp());
 }
 
